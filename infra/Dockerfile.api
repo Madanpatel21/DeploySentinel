@@ -1,0 +1,26 @@
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package.json package-lock.json* tsconfig.base.json ./
+COPY packages/shared/package.json packages/shared/
+COPY packages/engine/package.json packages/engine/
+COPY apps/api/package.json apps/api/
+RUN npm ci --workspace=@releaseguard/shared --workspace=@releaseguard/engine --workspace=@releaseguard/api --include-workspace-root
+COPY packages/ packages/
+COPY apps/api/ apps/api/
+RUN npm run build --workspace=@releaseguard/shared && npm run build --workspace=@releaseguard/engine && npm run build --workspace=@releaseguard/api
+
+FROM node:20-alpine AS runner
+RUN addgroup -g 1001 -S nodejs && adduser -S releaseguard -u 1001
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/packages/shared/dist ./packages/shared/dist
+COPY --from=builder /app/packages/shared/package.json ./packages/shared/
+COPY --from=builder /app/packages/engine/dist ./packages/engine/dist
+COPY --from=builder /app/packages/engine/package.json ./packages/engine/
+COPY --from=builder /app/apps/api/dist ./apps/api/dist
+COPY --from=builder /app/apps/api/package.json ./apps/api/
+USER releaseguard
+EXPOSE 4000
+HEALTHCHECK --interval=30s --timeout=5s CMD wget -qO- http://127.0.0.1:4000/healthz || exit 1
+CMD ["node", "apps/api/dist/server.js"]
