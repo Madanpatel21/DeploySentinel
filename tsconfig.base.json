@@ -11,6 +11,11 @@
     "resolveJsonModule": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@deploysentinel/shared": ["packages/shared/src/index.ts"],
+      "@deploysentinel/engine": ["packages/engine/src/index.ts"]
+    }
   }
 }
