@@ -45,7 +45,7 @@ export function simulateBlastRadius(
   for (const file of changedFiles) {
     let matched = false;
     for (const node of nodes) {
-      if (node.ownedPaths.some((p) => file.path.toLowerCase().includes(p.toLowerCase()))) {
+      if (node.ownedPaths.some((p: string) => file.path.toLowerCase().includes(p.toLowerCase()))) {
         directSet.add(node.id);
         matched = true;
       }
