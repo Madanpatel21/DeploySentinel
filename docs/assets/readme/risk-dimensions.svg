@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 310" width="1200" height="310" role="img" aria-label="ReleaseGuard 8-Dimension Deterministic Risk Scoring Weights">
+  <rect width="1200" height="310" rx="16" fill="#070C18" stroke="#1E293B" stroke-width="1.5"/>
+
+  <text x="34" y="40" fill="#F8FAFC" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" font-weight="700">Deterministic Risk Scoring Attribution (Engine v2.1.0)</text>
+  <text x="34" y="61" fill="#94A3B8" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12.5">Normalized 8-factor weighting (100% total) modulated by Environment &amp; Service Tier multipliers — AI remains strictly advisory</text>
+
+  <!-- Left Column (4 factors) -->
+  <g transform="translate(34, 88)" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+    <text x="0" y="14" fill="#E2E8F0" font-size="13" font-weight="700">Critical Path Sensitivity</text>
+    <text x="515" y="14" text-anchor="end" fill="#38BDF8" font-size="13" font-weight="700">18%</text>
+    <rect x="0" y="23" width="515" height="11" rx="5.5" fill="#1E293B"/>
+    <rect x="0" y="23" width="412" height="11" rx="5.5" fill="#06B6D4"/>
+
+    <text x="0" y="68" fill="#E2E8F0" font-size="13" font-weight="700">DB Migration Lock &amp; Safety</text>
+    <text x="515" y="68" text-anchor="end" fill="#A78BFA" font-size="13" font-weight="700">18%</text>
+    <rect x="0" y="77" width="515" height="11" rx="5.5" fill="#1E293B"/>
+    <rect x="0" y="77" width="412" height="11" rx="5.5" fill="#8B5CF6"/>
+
+    <text x="0" y="122" fill="#E2E8F0" font-size="13" font-weight="700">Code Churn &amp; Complexity</text>
+    <text x="515" y="122" text-anchor="end" fill="#38BDF8" font-size="13" font-weight="700">14%</text>
+    <rect x="0" y="131" width="515" height="11" rx="5.5" fill="#1E293B"/>
+    <rect x="0" y="131" width="320" height="11" rx="5.5" fill="#3B82F6"/>
+
+    <text x="0" y="176" fill="#E2E8F0" font-size="13" font-weight="700">Transitive Blast Radius</text>
+    <text x="515" y="176" text-anchor="end" fill="#F472B6" font-size="13" font-weight="700">14%</text>
+    <rect x="0" y="185" width="515" height="11" rx="5.5" fill="#1E293B"/>
+    <rect x="0" y="185" width="320" height="11" rx="5.5" fill="#EC4899"/>
+  </g>
+
+  <!-- Center Divider -->
+  <line x1="600" y1="84" x2="600" y2="286" stroke="#1E293B" stroke-width="1.2"/>
+
+  <!-- Right Column (4 factors) -->
+  <g transform="translate(648, 88)" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+    <text x="0" y="14" fill="#E2E8F0" font-size="13" font-weight="700">Supply Chain &amp; Provenance Exposure</text>
+    <text x="515" y="14" text-anchor="end" fill="#A78BFA" font-size="13" font-weight="700">14%</text>
+    <rect x="0" y="23" width="515" height="11" rx="5.5" fill="#1E293B"/>
+    <rect x="0" y="23" width="320" height="11" rx="5.5" fill="#8B5CF6"/>
+
+    <text x="0" y="68" fill="#E2E8F0" font-size="13" font-weight="700">Test Confidence Gap</text>
+    <text x="515" y="68" text-anchor="end" fill="#F472B6" font-size="13" font-weight="700">10%</text>
+    <rect x="0" y="77" width="515" height="11" rx="5.5" fill="#1E293B"/>
+    <rect x="0" y="77" width="229" height="11" rx="5.5" fill="#EC4899"/>
+
+    <text x="0" y="122" fill="#E2E8F0" font-size="13" font-weight="700">Infrastructure Drift Exposure</text>
+    <text x="515" y="122" text-anchor="end" fill="#FBBF24" font-size="13" font-weight="700">6%</text>
+    <rect x="0" y="131" width="515" height="11" rx="5.5" fill="#1E293B"/>
+    <rect x="0" y="131" width="137" height="11" rx="5.5" fill="#F59E0B"/>
+
+    <text x="0" y="176" fill="#E2E8F0" font-size="13" font-weight="700">Historical Service Failure Rate</text>
+    <text x="515" y="176" text-anchor="end" fill="#FBBF24" font-size="13" font-weight="700">6%</text>
+    <rect x="0" y="185" width="515" height="11" rx="5.5" fill="#1E293B"/>
+    <rect x="0" y="185" width="137" height="11" rx="5.5" fill="#F59E0B"/>
+  </g>
+</svg>
