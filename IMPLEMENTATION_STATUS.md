@@ -1,4 +1,4 @@
-# ReleaseGuard — Implementation Status Tracker
+# DeploySentinel — Implementation Status Tracker
 
 **Last Updated:** 2026-11-16  
 

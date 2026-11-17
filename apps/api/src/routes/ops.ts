@@ -1,13 +1,13 @@
 import type { FastifyInstance } from 'fastify';
 import { z } from 'zod';
-import { PLAN_ENTITLEMENTS, SAAS_PLANS } from '@releaseguard/shared';
+import { PLAN_ENTITLEMENTS, SAAS_PLANS } from '@deploysentinel/shared';
 import {
   assessChaosReadiness,
   computePredictiveCalibration,
   computeTeamDoraMetrics,
   detectInfraDrift,
   estimateDeploymentFinOpsDelta,
-} from '@releaseguard/engine';
+} from '@deploysentinel/engine';
 import { authenticateRequest, encryptSecret, requirePermission } from '../auth/security.js';
 import { recordAuditLog, supabase, verifyAuditChain } from '../db/supabase.js';
 import { testConnectorIntegration } from '../services/connectors.js';

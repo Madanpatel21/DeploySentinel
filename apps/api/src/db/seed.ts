@@ -12,13 +12,13 @@ import {
   detectInfraDrift,
   estimateDeploymentFinOpsDelta,
   assessChaosReadiness,
-} from '@releaseguard/engine';
+} from '@deploysentinel/engine';
 import { hashPassword } from '../auth/security.js';
 import { config } from '../config.js';
 import { recordAuditLog, supabase } from '../db/supabase.js';
 
 async function seed() {
-  console.log('Seeding ReleaseGuard Supabase schema (`releaseguard`)...');
+  console.log('Seeding DeploySentinel Supabase schema (`releaseguard`)...');
 
   // Check if Acme Cloud Corp already exists (idempotent seed)
   const { data: existingOrg } = await supabase
@@ -48,17 +48,17 @@ async function seed() {
   if (!acmeOrg || !betaOrg) throw new Error('Failed to create organizations');
 
   // 2. Create Users across RBAC roles (real bcrypt hashes)
-  const demoPassHash = await hashPassword('ReleaseGuard!2026');
+  const demoPassHash = await hashPassword('DeploySentinel!2026');
   const { data: users } = await supabase
     .from('users')
     .insert([
-      { email: 'owner@acme.releaseguard.io', full_name: 'Elena Vance', password_hash: demoPassHash },
-      { email: 'relmgr@acme.releaseguard.io', full_name: 'Marcus Sterling', password_hash: demoPassHash },
-      { email: 'sre@acme.releaseguard.io', full_name: 'Priya Nair', password_hash: demoPassHash },
-      { email: 'sec@acme.releaseguard.io', full_name: 'David Kim', password_hash: demoPassHash },
-      { email: 'dev@acme.releaseguard.io', full_name: 'Lucas Silva', password_hash: demoPassHash },
-      { email: 'auditor@acme.releaseguard.io', full_name: 'Claire Dubois', password_hash: demoPassHash },
-      { email: 'beta-owner@beta.releaseguard.io', full_name: 'Omar Farooq', password_hash: demoPassHash },
+      { email: 'owner@acme.deploysentinel.io', full_name: 'Elena Vance', password_hash: demoPassHash },
+      { email: 'relmgr@acme.deploysentinel.io', full_name: 'Marcus Sterling', password_hash: demoPassHash },
+      { email: 'sre@acme.deploysentinel.io', full_name: 'Priya Nair', password_hash: demoPassHash },
+      { email: 'sec@acme.deploysentinel.io', full_name: 'David Kim', password_hash: demoPassHash },
+      { email: 'dev@acme.deploysentinel.io', full_name: 'Lucas Silva', password_hash: demoPassHash },
+      { email: 'auditor@acme.deploysentinel.io', full_name: 'Claire Dubois', password_hash: demoPassHash },
+      { email: 'beta-owner@beta.deploysentinel.io', full_name: 'Omar Farooq', password_hash: demoPassHash },
     ])
     .select('*');
 

@@ -34,7 +34,7 @@ export default function LandingPage() {
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600/20 text-blue-400 ring-1 ring-blue-500/40">
               <Shield className="h-5 w-5" />
             </div>
-            <span className="text-lg font-bold tracking-tight text-white">ReleaseGuard</span>
+            <span className="text-lg font-bold tracking-tight text-white">DeploySentinel</span>
           </div>
           <nav className="hidden items-center gap-6 text-sm text-slate-300 md:flex">
             <a href="#capabilities" className="hover:text-white">Capabilities</a>
@@ -59,7 +59,7 @@ export default function LandingPage() {
             Know the risk before you release. <span className="text-blue-400">Protect every deployment.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base text-slate-300 sm:text-lg">
-            ReleaseGuard unifies pre-release risk scoring, Deployment Digital Twins, SQL migration safety, CycloneDX SBOMs, Policy Simulation, statistical canary gates, and incident replay in one multi-tenant SaaS platform.
+            DeploySentinel unifies pre-release risk scoring, Deployment Digital Twins, SQL migration safety, CycloneDX SBOMs, Policy Simulation, statistical canary gates, and incident replay in one multi-tenant SaaS platform.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link href="/login" className="rg-btn-primary px-6 py-3 text-base">
@@ -111,7 +111,7 @@ export default function LandingPage() {
 
       <footer className="border-t border-slate-800 py-8 text-center text-xs text-slate-500">
         <div className="flex items-center justify-center gap-2">
-          <GitBranch className="h-3.5 w-3.5" /> ReleaseGuard Enterprise Control Plane · Powered by Deterministic Engines &amp; Supabase PostgreSQL 17
+          <GitBranch className="h-3.5 w-3.5" /> DeploySentinel Enterprise Control Plane · Powered by Deterministic Engines &amp; Supabase PostgreSQL 17
         </div>
       </footer>
     </div>

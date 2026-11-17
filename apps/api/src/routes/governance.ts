@@ -7,7 +7,7 @@ import {
   validateRemediationAction,
   type PolicyDefinition,
   type PolicyEvalContext,
-} from '@releaseguard/engine';
+} from '@deploysentinel/engine';
 import { authenticateRequest, requirePermission } from '../auth/security.js';
 import { recordAuditLog, supabase } from '../db/supabase.js';
 import { broadcastOrgEvent } from '../services/sse.js';

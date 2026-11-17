@@ -1,4 +1,4 @@
-import type { ChangedFileInput } from '@releaseguard/shared';
+import type { ChangedFileInput } from '@deploysentinel/shared';
 
 export interface TestCandidate {
   id: string;

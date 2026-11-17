@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/assets/readme/hero-banner.svg" alt="ReleaseGuard Enterprise — DevOps Intelligence & SRE Control Plane" width="100%" />
+<img src="docs/assets/readme/hero-banner.svg" alt="DeploySentinel Enterprise — DevOps Intelligence & SRE Control Plane" width="100%" />
 
 <br /><br />
 
@@ -29,11 +29,11 @@
 
 <br />
 
-<img src="docs/assets/readme/01-hero-3d.webp" alt="ReleaseGuard Enterprise 3D Control Center" width="100%" />
+<img src="docs/assets/readme/01-hero-3d.webp" alt="DeploySentinel Enterprise 3D Control Center" width="100%" />
 
 <br />
 
-> **Every commit carries hidden operational risk.** ReleaseGuard Enterprise evaluates code churn, critical paths, transitive blast radius, SQL lock hazards, SBOM CVEs, infrastructure drift, and test gaps **before** a release reaches production—then guards live rollouts with Welch *t*-test statistical canary verification and human-in-the-loop controls.
+> **Every commit carries hidden operational risk.** DeploySentinel Enterprise evaluates code churn, critical paths, transitive blast radius, SQL lock hazards, SBOM CVEs, infrastructure drift, and test gaps **before** a release reaches production—then guards live rollouts with Welch *t*-test statistical canary verification and human-in-the-loop controls.
 
 </div>
 
@@ -54,15 +54,15 @@
 
 ## 2. Project Introduction
 
-**ReleaseGuard Enterprise** is a unified, AI-assisted **DevOps Intelligence, Release Engineering, Deployment Risk Management, and Site Reliability Control Plane** built as a strict TypeScript npm-workspaces monorepo (`@releaseguard/shared`, `@releaseguard/engine`, `@releaseguard/api`, and `@releaseguard/web`).
+**DeploySentinel Enterprise** is a unified, AI-assisted **DevOps Intelligence, Release Engineering, Deployment Risk Management, and Site Reliability Control Plane** built as a strict TypeScript npm-workspaces monorepo (`@deploysentinel/shared`, `@deploysentinel/engine`, `@deploysentinel/api`, and `@deploysentinel/web`).
 
-Modern engineering organizations typically fragment release governance across disconnected point tools: static code scanners, database migration checklists, SBOM CVE dashboards, feature flag platforms, deployment orchestrators, incident war rooms, and post-hoc DORA spreadsheets. ReleaseGuard unifies the entire pre-release, rollout, and post-deployment reliability loop into one cryptographically auditable control plane backed by **PostgreSQL 17 Row-Level Security (RLS)** and **30 App Router console screens**.
+Modern engineering organizations typically fragment release governance across disconnected point tools: static code scanners, database migration checklists, SBOM CVE dashboards, feature flag platforms, deployment orchestrators, incident war rooms, and post-hoc DORA spreadsheets. DeploySentinel unifies the entire pre-release, rollout, and post-deployment reliability loop into one cryptographically auditable control plane backed by **PostgreSQL 17 Row-Level Security (RLS)** and **30 App Router console screens**.
 
 ---
 
 ## 3. Product Vision
 
-ReleaseGuard is engineered around four non-negotiable architectural invariants:
+DeploySentinel is engineered around four non-negotiable architectural invariants:
 
 | Architectural Principle | Implementation Guarantee |
 | :--- | :--- |
@@ -73,9 +73,9 @@ ReleaseGuard is engineered around four non-negotiable architectural invariants:
 
 ---
 
-## 4. Why ReleaseGuard Enterprise?
+## 4. Why DeploySentinel Enterprise?
 
-| Capability Dimension | Traditional Point Tools | ReleaseGuard Enterprise |
+| Capability Dimension | Traditional Point Tools | DeploySentinel Enterprise |
 | :--- | :--- | :--- |
 | **Pre-Release Risk Intelligence** | Post-hoc deployment failure reporting | Deterministic 8-dimension scoring (`v2.1.0`) + Blast Radius before merge/deploy |
 | **Database Migration Safety** | Manual DBA PR review or late runtime locks | AST/DDL hazard scanner (`DROP`, `TRUNCATE`, table rewrites, missing `CONCURRENTLY`) + Expand-and-Contract plan |
@@ -89,7 +89,7 @@ ReleaseGuard is engineered around four non-negotiable architectural invariants:
 
 ## 5. Core Capabilities
 
-ReleaseGuard delivers **16 Core Product Modules** paired with **10 Enterprise Differentiators**, all backed by persistent PostgreSQL tables in the `releaseguard` schema and exposed through `/api/v1` and the 30-screen Web Console.
+DeploySentinel delivers **16 Core Product Modules** paired with **10 Enterprise Differentiators**, all backed by persistent PostgreSQL tables in the `releaseguard` schema and exposed through `/api/v1` and the 30-screen Web Console.
 
 <table>
   <tr>
@@ -141,7 +141,7 @@ ReleaseGuard delivers **16 Core Product Modules** paired with **10 Enterprise Di
 Every release ingested via the Web Console, REST API, Local Git Scanner, or HMAC-signed webhook passes through `computeDeterministicRiskScore()` (`packages/engine/src/risk-scorer.ts`). Raw normalized signals are weighted across **8 deterministic dimensions** and modulated by Environment (`dev` `0.85x`, `staging` `1.0x`, `prod` `1.12x`) and Service Tier (`TIER_0` `1.1x`, `TIER_1` `1.0x`, `TIER_2/3` `0.9x`).
 
 <p align="center">
-  <img src="docs/assets/readme/risk-dimensions.svg" alt="ReleaseGuard 8-Dimension Deterministic Risk Scoring Attribution" width="100%" />
+  <img src="docs/assets/readme/risk-dimensions.svg" alt="DeploySentinel 8-Dimension Deterministic Risk Scoring Attribution" width="100%" />
 </p>
 
 ### SQL Migration Lock Safety & Expand-and-Contract Synthesis
@@ -149,7 +149,7 @@ Every release ingested via the Web Console, REST API, Local Git Scanner, or HMAC
 - Automatically produces a **4-step Expand-and-Contract migration plan** and best-effort rollback SQL, while gating `HIGH`/`CRITICAL` migrations behind explicit DBA or `SECURITY_ADMIN` approval.
 
 ### Real Local Git Repository Scanner
-- Built directly into `@releaseguard/api` (`apps/api/src/services/git-inspector.ts`) and accessible via `/projects` or `POST /api/v1/projects/scan-local-repo`.
+- Built directly into `@deploysentinel/api` (`apps/api/src/services/git-inspector.ts`) and accessible via `/projects` or `POST /api/v1/projects/scan-local-repo`.
 - Executes safe `git rev-parse`, `git diff`, `package.json`, and `*.sql` inspections on a target workspace path and feeds real commit/file/dependency diffs directly into the scoring pipeline.
 
 ### Prompt-Injection-Hardened AI Adapter
@@ -163,7 +163,7 @@ Every release ingested via the Web Console, REST API, Local Git Scanner, or HMAC
 From source commit to statistical canary verification and guarded remediation, every release traverses an observable, deterministic pipeline:
 
 <p align="center">
-  <img src="docs/assets/readme/02-release-lifecycle-3d.webp" alt="ReleaseGuard 3D Interconnected Release Lifecycle" width="100%" />
+  <img src="docs/assets/readme/02-release-lifecycle-3d.webp" alt="DeploySentinel 3D Interconnected Release Lifecycle" width="100%" />
 </p>
 
 ### Release Lifecycle Flow
@@ -190,10 +190,10 @@ flowchart LR
 
 ## 8. System Architecture
 
-ReleaseGuard is structured as a modular **4-workspace TypeScript monorepo** engineered for strict separation between pure domain engines (`@releaseguard/engine`), shared contracts (`@releaseguard/shared`), API orchestration (`@releaseguard/api`), and the App Router console (`@releaseguard/web`).
+DeploySentinel is structured as a modular **4-workspace TypeScript monorepo** engineered for strict separation between pure domain engines (`@deploysentinel/engine`), shared contracts (`@deploysentinel/shared`), API orchestration (`@deploysentinel/api`), and the App Router console (`@deploysentinel/web`).
 
 <p align="center">
-  <img src="docs/assets/readme/03-architecture-3d.webp" alt="ReleaseGuard Enterprise Layered 3D Architecture" width="100%" />
+  <img src="docs/assets/readme/03-architecture-3d.webp" alt="DeploySentinel Enterprise Layered 3D Architecture" width="100%" />
 </p>
 
 ### High-Level System Architecture
@@ -213,7 +213,7 @@ flowchart TB
         Worker["Background Job Worker (Redis/BullMQ or durable DB queue)"]
     end
 
-    subgraph EngineLayer["Deterministic Intelligence — @releaseguard/engine"]
+    subgraph EngineLayer["Deterministic Intelligence — @deploysentinel/engine"]
         Risk["Risk Scorer v2.1.0 & Blast Radius"]
         Guards["SQL Analyzer · SBOM/CVE Scanner · Test Selector · Policy Sim"]
         Ops["Digital Twin · Canary Welch t-test · Replay · L0–L4 Remediation"]
@@ -251,10 +251,10 @@ flowchart LR
 
 ## 9. Security Architecture
 
-Security in ReleaseGuard is enforced across identity, tenant isolation, cryptographic attestation, and supply-chain verification.
+Security in DeploySentinel is enforced across identity, tenant isolation, cryptographic attestation, and supply-chain verification.
 
 <p align="center">
-  <img src="docs/assets/readme/04-security-shield-3d.webp" alt="ReleaseGuard 3D Security Intelligence Vault" width="100%" />
+  <img src="docs/assets/readme/04-security-shield-3d.webp" alt="DeploySentinel 3D Security Intelligence Vault" width="100%" />
 </p>
 
 ### Security Validation Workflow
@@ -296,10 +296,10 @@ flowchart TD
 
 ## 10. Deployment Workflow
 
-ReleaseGuard enforces clean progressive isolation across **Development**, **Testing**, **Canary Staging**, and **Production** environments—keeping humans in control of every production promotion and rollback.
+DeploySentinel enforces clean progressive isolation across **Development**, **Testing**, **Canary Staging**, and **Production** environments—keeping humans in control of every production promotion and rollback.
 
 <p align="center">
-  <img src="docs/assets/readme/05-environments-3d.webp" alt="ReleaseGuard 3D Deployment Environments Progression" width="100%" />
+  <img src="docs/assets/readme/05-environments-3d.webp" alt="DeploySentinel 3D Deployment Environments Progression" width="100%" />
 </p>
 
 ### Deployment Sequence
@@ -356,7 +356,7 @@ All versions below are verified directly from workspace `package.json`, `infra/`
 | :--- | :--- |
 | **Frontend Console** | Next.js `15.5.29` (App Router, 30 screens), React `18.3.1`, TypeScript `5.6.3`, Tailwind CSS `3.4.15`, TanStack React Query `5.60.5`, Recharts `2.13.3`, Lucide Icons `0.460.0` |
 | **Control Plane API** | Fastify `5.1.0`, `@fastify/helmet` `13.0.1`, `@fastify/cors` `10.0.1`, `@fastify/rate-limit` `10.2.0`, `@fastify/swagger` `9.4.0`, `@fastify/swagger-ui` `5.2.0`, `jose` `5.9.6`, `bcryptjs` `2.4.3`, `otpauth` `9.3.5`, `zod` `3.23.8`, `ws` `8.23.0` |
-| **Deterministic Engines** | `@releaseguard/engine` (`1.0.0`), `@releaseguard/shared` (`1.0.0`), Vitest `2.1.4` |
+| **Deterministic Engines** | `@deploysentinel/engine` (`1.0.0`), `@deploysentinel/shared` (`1.0.0`), Vitest `2.1.4` |
 | **Database & Queue** | Supabase PostgreSQL `17` (`releaseguard` schema, 27 tables, RLS), `@supabase/supabase-js` `2.46.1`, durable DB queue (`releaseguard.jobs_queue`) with optional Redis `7` |
 | **Containers, IaC & Obs** | Multi-stage Alpine Dockerfiles (`Dockerfile.api`, `Dockerfile.web`), Docker Compose, Kubernetes `Deployment`, Terraform (AWS KMS + S3 archive), Prometheus, OpenTelemetry Collector, Jaeger, Grafana |
 | **CI/CD & Security** | GitHub Actions (`ci-security.yml`), Gitleaks, Semgrep (`p/typescript`, `p/owasp-top-ten`), Syft (CycloneDX JSON), Grype, Trivy |
@@ -366,22 +366,22 @@ All versions below are verified directly from workspace `package.json`, `infra/`
 ## 12. Repository Structure
 
 ```text
-releaseguard/
+releaseguard/                           # DeploySentinel Enterprise Monorepo (/home/user/releaseguard)
 ├── .github/workflows/
 │   └── ci-security.yml                 # Typecheck, build, Vitest, Gitleaks, Semgrep, Syft, Grype, Trivy
 ├── apps/
-│   ├── api/                            # @releaseguard/api — Fastify REST v1, Swagger, SSE, Git CLI scanner
+│   ├── api/                            # @deploysentinel/api — Fastify REST v1, Swagger, SSE, Git CLI scanner
 │   │   ├── src/auth/                   # JWT, bcrypt, TOTP MFA, rg_live_ API keys, 9-role RBAC
 │   │   ├── src/db/                     # Supabase client (releaseguard schema) & idempotent seed
 │   │   ├── src/routes/                 # auth, releases, governance, ops route modules
 │   │   ├── src/services/               # sse, git-inspector, connectors, job-worker
 │   │   └── src/__tests__/              # Live PostgreSQL 17 integration & security test suites (6/6)
-│   └── web/                            # @releaseguard/web — 30-screen Next.js 15.5.29 Enterprise Console
+│   └── web/                            # @deploysentinel/web — 30-screen Next.js 15.5.29 Enterprise Console
 │       ├── next.config.mjs             # /api/v1/:path* reverse-proxy rewrite to Fastify API
 │       └── src/                        # App Router pages, Providers, AppShell, RiskBadge, API client
 ├── packages/
-│   ├── shared/                         # @releaseguard/shared — 9 roles, 32 permissions, SaaS plans, types
-│   └── engine/                         # @releaseguard/engine — 11 deterministic intelligence modules + tests (10/10)
+│   ├── shared/                         # @deploysentinel/shared — 9 roles, 32 permissions, SaaS plans, types
+│   └── engine/                         # @deploysentinel/engine — 11 deterministic intelligence modules + tests (10/10)
 ├── infra/
 │   ├── Dockerfile.api & Dockerfile.web # Non-root multi-stage Alpine container builds
 │   ├── docker-compose.yml              # Full stack: API, Web, Redis, Prometheus, OTel, Jaeger, Grafana
@@ -416,7 +416,7 @@ cp .env.example .env
 # 2. Install monorepo dependencies
 npm install
 
-# 3. Typecheck and build all 4 workspaces (@releaseguard/shared, engine, api, web)
+# 3. Typecheck and build all 4 workspaces (@deploysentinel/shared, engine, api, web)
 npm run typecheck
 npm run build
 
@@ -428,17 +428,17 @@ npm run dev:api
 npm run dev:web
 ```
 
-### Seeded Demo Accounts (Password: `ReleaseGuard!2026`)
+### Seeded Demo Accounts (Password: `DeploySentinel!2026`)
 
 | Email | RBAC Role | Tenant Organization | Ideal Walkthrough Focus |
 | :--- | :--- | :--- | :--- |
-| `owner@acme.releaseguard.io` | `ORG_OWNER` | Acme Cloud Corp | Full admin, TOTP MFA, `rg_live_` API keys, plan metering, approvals |
-| `relmgr@acme.releaseguard.io` | `RELEASE_MANAGER` | Acme Cloud Corp | Production release gate & Separation of Duties approval |
-| `sre@acme.releaseguard.io` | `SRE_ONCALL` | Acme Cloud Corp | Deployments, Canary statistical gate, Incidents & L0–L4 remediation |
-| `sec@acme.releaseguard.io` | `SECURITY_ADMIN` | Acme Cloud Corp | SBOM/CVEs, SQL migration approvals, policy rules & compliance export |
-| `dev@acme.releaseguard.io` | `DEVELOPER` | Acme Cloud Corp | Release ingestion, Local Git scan, Digital Twin & sandboxes |
-| `auditor@acme.releaseguard.io` | `AUDITOR` | Acme Cloud Corp | Read-only compliance frameworks & SHA-256 audit chain verification |
-| `beta-owner@beta.releaseguard.io` | `ORG_OWNER` | Beta Fintech Labs | Multi-tenant PostgreSQL RLS isolation verification |
+| `owner@acme.deploysentinel.io` | `ORG_OWNER` | Acme Cloud Corp | Full admin, TOTP MFA, `rg_live_` API keys, plan metering, approvals |
+| `relmgr@acme.deploysentinel.io` | `RELEASE_MANAGER` | Acme Cloud Corp | Production release gate & Separation of Duties approval |
+| `sre@acme.deploysentinel.io` | `SRE_ONCALL` | Acme Cloud Corp | Deployments, Canary statistical gate, Incidents & L0–L4 remediation |
+| `sec@acme.deploysentinel.io` | `SECURITY_ADMIN` | Acme Cloud Corp | SBOM/CVEs, SQL migration approvals, policy rules & compliance export |
+| `dev@acme.deploysentinel.io` | `DEVELOPER` | Acme Cloud Corp | Release ingestion, Local Git scan, Digital Twin & sandboxes |
+| `auditor@acme.deploysentinel.io` | `AUDITOR` | Acme Cloud Corp | Read-only compliance frameworks & SHA-256 audit chain verification |
+| `beta-owner@beta.deploysentinel.io` | `ORG_OWNER` | Beta Fintech Labs | Multi-tenant PostgreSQL RLS isolation verification |
 
 <details>
 <summary><strong>Docker Compose Full-Stack Deployment (API + Web + Redis + Prometheus + OTel + Jaeger + Grafana)</strong></summary>
@@ -502,30 +502,30 @@ Run the full workspace verification suite from the repository root:
 ```bash
 npm run typecheck   # Strict TypeScript across shared, engine, api, and web
 npm run build       # Compiles all 4 packages + 32 Next.js routes
-npm test            # Runs @releaseguard/engine (10/10) + @releaseguard/api (6/6)
+npm test            # Runs @deploysentinel/engine (10/10) + @deploysentinel/api (6/6)
 ```
 
 | Verification Suite | Scope | Verified Result |
 | :--- | :--- | :--- |
-| **`@releaseguard/engine` Unit Tests** | Risk scorer `v2.1.0`, Blast Radius, ITS, SQL lock analyzer, SBOM/CVE scanner, Policy Simulation, Canary Welch *t*-test, Replay, Drift/FinOps/DORA, Prompt-Injection & Passport HMAC | **10 / 10 PASSED** |
-| **`@releaseguard/api` Integration Tests** | Live Supabase PG17 tenant isolation (`Acme` vs `Beta`), 9-role RBAC & SoD `403` enforcement, idempotent ingestion, Local Git CLI scan, Webhook HMAC verification, SHA-256 audit chain integrity | **6 / 6 PASSED** |
+| **`@deploysentinel/engine` Unit Tests** | Risk scorer `v2.1.0`, Blast Radius, ITS, SQL lock analyzer, SBOM/CVE scanner, Policy Simulation, Canary Welch *t*-test, Replay, Drift/FinOps/DORA, Prompt-Injection & Passport HMAC | **10 / 10 PASSED** |
+| **`@deploysentinel/api` Integration Tests** | Live Supabase PG17 tenant isolation (`Acme` vs `Beta`), 9-role RBAC & SoD `403` enforcement, idempotent ingestion, Local Git CLI scan, Webhook HMAC verification, SHA-256 audit chain integrity | **6 / 6 PASSED** |
 | **CI Security Pipeline** | `.github/workflows/ci-security.yml`: Gitleaks secrets scan, Semgrep (`p/typescript`, `p/owasp-top-ten`), Syft CycloneDX SBOM, Grype critical CVE gate, Trivy filesystem scan | **Configured in CI** |
 
 <p align="center"><img src="docs/assets/readme/divider-glow.svg" alt="" width="100%" /></p>
 
 ## 17. Observability
 
-ReleaseGuard combines live SRE telemetry endpoints with OpenTelemetry, Prometheus, Jaeger, and Grafana configurations (`infra/observability/`):
+DeploySentinel combines live SRE telemetry endpoints with OpenTelemetry, Prometheus, Jaeger, and Grafana configurations (`infra/observability/`):
 
 <p align="center">
-  <img src="docs/assets/readme/06-observability-3d.webp" alt="ReleaseGuard 3D SRE Observability & Telemetry Center" width="100%" />
+  <img src="docs/assets/readme/06-observability-3d.webp" alt="DeploySentinel 3D SRE Observability & Telemetry Center" width="100%" />
 </p>
 
 | Telemetry Surface | Endpoint / Config | What It Provides |
 | :--- | :--- | :--- |
 | **Process Liveness** | `GET /healthz` | API service liveness status and timestamp |
 | **Database Readiness** | `GET /readyz` | Live connectivity check against Supabase PostgreSQL 17 (`releaseguard` schema) |
-| **Prometheus Metrics** | `GET /metrics` | `releaseguard_releases_total`, `releaseguard_open_incidents_total`, `releaseguard_up` |
+| **Prometheus Metrics** | `GET /metrics` | `deploysentinel_releases_total`, `deploysentinel_open_incidents_total`, `deploysentinel_up` |
 | **Live Event Stream** | `GET /api/v1/stream` | Tenant-scoped Server-Sent Events (SSE) for real-time console updates |
 | **OTel + Jaeger + Grafana** | `infra/observability/` | `otel-collector.yaml` (`4317`/`4318`) & `prometheus.yml` scrape configs |
 
@@ -533,7 +533,7 @@ ReleaseGuard combines live SRE telemetry endpoints with OpenTelemetry, Prometheu
 
 ## 18. Web Console Screens & Demonstrations
 
-All **30 App Router screens** in `@releaseguard/web` are implemented, compiled (`next build`), and verified against the live API proxy. *(Static UI browser screenshots are not bundled in `docs/`; start the local server with `npm run dev:api` and `npm run dev:web` and use the one-click RBAC personas at `/login` to explore every screen interactively.)*
+All **30 App Router screens** in `@deploysentinel/web` are implemented, compiled (`next build`), and verified against the live API proxy. *(Static UI browser screenshots are not bundled in `docs/`; start the local server with `npm run dev:api` and `npm run dev:web` and use the one-click RBAC personas at `/login` to explore every screen interactively.)*
 
 <details>
 <summary><strong>Explore All 30 Verified Next.js Web Console Routes</strong></summary>
@@ -596,7 +596,7 @@ All 20 implementation phases (`0` through `20`) documented in [`IMPLEMENTATION_S
 
 ## 21. License
 
-This repository is marked `"private": true` in `package.json` (**ReleaseGuard Enterprise Private Monorepo**). No standalone open-source `LICENSE` file is bundled in this repository; please contact the repository owner for commercial or enterprise licensing terms.
+This repository is marked `"private": true` in `package.json` (**DeploySentinel Enterprise Private Monorepo**). No standalone open-source `LICENSE` file is bundled in this repository; please contact the repository owner for commercial or enterprise licensing terms.
 
 ---
 
@@ -616,7 +616,7 @@ Explore the complete engineering specification suite in [`docs/`](docs/):
 <p align="center">
   <img src="docs/assets/readme/divider-glow.svg" alt="" width="100%" />
   <br />
-  <strong>ReleaseGuard Enterprise</strong> — <em>Know the risk before you release. Understand every change. Protect every deployment.</em>
+  <strong>DeploySentinel Enterprise</strong> — <em>Know the risk before you release. Understand every change. Protect every deployment.</em>
   <br /><br />
   <a href="#1-quick-navigation">Back to Top ↑</a>
 </p>

@@ -2,7 +2,7 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import type { ChangedFileInput } from '@releaseguard/shared';
+import type { ChangedFileInput } from '@deploysentinel/shared';
 
 const execFileAsync = promisify(execFile);
 
@@ -28,12 +28,12 @@ export async function inspectLocalGitRepository(repoPath: string): Promise<Local
   const [branchRes, shaRes, logRes] = await Promise.all([
     execFileAsync('git', ['rev-parse', '--abbrev-ref', 'HEAD'], gitOpts).catch(() => ({ stdout: 'main' })),
     execFileAsync('git', ['rev-parse', 'HEAD'], gitOpts).catch(() => ({ stdout: '0000000000000000000000000000000000000000' })),
-    execFileAsync('git', ['log', '-1', '--pretty=format:%s||%ae'], gitOpts).catch(() => ({ stdout: 'Initial workspace scan||engineering@releaseguard.io' })),
+    execFileAsync('git', ['log', '-1', '--pretty=format:%s||%ae'], gitOpts).catch(() => ({ stdout: 'Initial workspace scan||engineering@deploysentinel.io' })),
   ]);
 
   const branch = branchRes.stdout.trim() || 'main';
   const headSha = shaRes.stdout.trim() || '0000000';
-  const [commitTitle, commitAuthorEmail] = (logRes.stdout.trim() || 'Workspace scan||engineering@releaseguard.io').split('||');
+  const [commitTitle, commitAuthorEmail] = (logRes.stdout.trim() || 'Workspace scan||engineering@deploysentinel.io').split('||');
 
   let changedFiles: ChangedFileInput[] = [];
   try {
@@ -91,7 +91,7 @@ export async function inspectLocalGitRepository(repoPath: string): Promise<Local
     branch,
     headSha,
     commitTitle: commitTitle || 'Workspace commit',
-    commitAuthorEmail: commitAuthorEmail || 'engineering@releaseguard.io',
+    commitAuthorEmail: commitAuthorEmail || 'engineering@deploysentinel.io',
     changedFiles,
     packageJson,
     sqlFiles,

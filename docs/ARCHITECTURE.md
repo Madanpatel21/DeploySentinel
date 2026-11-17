@@ -1,4 +1,4 @@
-# ReleaseGuard — System Architecture
+# DeploySentinel — System Architecture
 
 **Version:** 1.0.0  
 **Last Updated:** 2026-11-16  
@@ -7,7 +7,7 @@
 
 ## 1. Architectural Overview
 
-ReleaseGuard is architected as a modular TypeScript monorepo separating pure deterministic domain engines (`packages/engine`), shared contracts (`packages/shared`), API & orchestration control plane (`apps/api`), and the 30-screen enterprise web console (`apps/web`).
+DeploySentinel is architected as a modular TypeScript monorepo separating pure deterministic domain engines (`packages/engine`), shared contracts (`packages/shared`), API & orchestration control plane (`apps/api`), and the 30-screen enterprise web console (`apps/web`).
 
 ```mermaid
 flowchart TB
@@ -17,7 +17,7 @@ flowchart TB
         OTEL["OTel / Prometheus /<br/>Alert Telemetry"]
     end
 
-    subgraph ControlPlane["ReleaseGuard API & Control Plane (apps/api)"]
+    subgraph ControlPlane["DeploySentinel API & Control Plane (apps/api)"]
         AUTH["Auth, JWT, MFA, 9-Role RBAC<br/>& Tenant Isolation"]
         REST["Fastify REST v1 + OpenAPI + SSE"]
         QUEUE["Job Queue & Async Worker<br/>(BullMQ/Redis or PG Queue)"]
@@ -62,7 +62,7 @@ flowchart TB
 sequenceDiagram
     autonumber
     participant CI as CI/CD / Git Repo
-    participant API as ReleaseGuard API
+    participant API as DeploySentinel API
     participant ENG as Deterministic Engines
     participant POL as Policy & Approval Gate
     participant CAN as Canary / Health Monitor

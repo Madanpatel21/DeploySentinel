@@ -10,4 +10,4 @@ Compares `baseline` vs `canary` telemetry windows (`errorRate`, `p95LatencyMs`, 
 - Pod restart and CPU/memory saturation thresholds
 
 ## Safety Invariant: `auto_rollback_enabled = false`
-All projects and environments default to `auto_rollback_enabled = false`. When degradation is detected (`DEGRADED` or `CRITICAL`), ReleaseGuard sets `rollback_recommended = true`, broadcasts an SSE alert, and awaits explicit human operator authorization via `POST /api/v1/deployments/:id/rollback`.
+All projects and environments default to `auto_rollback_enabled = false`. When degradation is detected (`DEGRADED` or `CRITICAL`), DeploySentinel sets `rollback_recommended = true`, broadcasts an SSE alert, and awaits explicit human operator authorization via `POST /api/v1/deployments/:id/rollback`.

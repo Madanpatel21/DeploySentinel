@@ -1,7 +1,7 @@
 import crypto from 'node:crypto';
 import type { FastifyInstance } from 'fastify';
 import { z } from 'zod';
-import { PLAN_ENTITLEMENTS, RBAC_ROLES, type RbacRole } from '@releaseguard/shared';
+import { PLAN_ENTITLEMENTS, RBAC_ROLES, type RbacRole } from '@deploysentinel/shared';
 import {
   authenticateRequest,
   encryptSecret,

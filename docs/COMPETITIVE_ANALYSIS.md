@@ -1,4 +1,4 @@
-# ReleaseGuard — Competitive Analysis & Market Intelligence
+# DeploySentinel — Competitive Analysis & Market Intelligence
 
 **Date:** 2026-11-16  
 
@@ -8,7 +8,7 @@
 
 Enterprise DevOps teams currently stitch together 5–8 disconnected point tools to answer a single question: *"Is this release safe to ship right now, and what happens if it fails?"*
 
-| Category | Representative Vendors | Core Strength | Critical Gap Addressed by ReleaseGuard |
+| Category | Representative Vendors | Core Strength | Critical Gap Addressed by DeploySentinel |
 | :--- | :--- | :--- | :--- |
 | **CD & GitOps Orchestration** | Harness CD, Argo CD, Argo Rollouts, Flux | Pipeline execution, K8s manifest reconciliation, canary traffic shifting | Weak pre-merge DB lock/migration intelligence, no unified Digital Twin blast-radius graph, high setup complexity |
 | **Feature Management** | LaunchDarkly | Sub-200ms runtime flag evaluation, multi-context targeting, experimentation | Blind to code-change complexity, SQL DDL locking, SBOM/SLSA provenance, and Terraform drift |
@@ -20,7 +20,7 @@ Enterprise DevOps teams currently stitch together 5–8 disconnected point tools
 
 ## 2. Detailed Feature Matrix
 
-| Capability | ReleaseGuard | Harness CD | LaunchDarkly | Datadog | Spacelift | incident.io |
+| Capability | DeploySentinel | Harness CD | LaunchDarkly | Datadog | Spacelift | incident.io |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | Deterministic Pre-Release Risk Score | **Full** | Partial | No | No | IaC Only | No |
 | Release Blast-Radius Simulator & Digital Twin | **Full** | No | No | Service Map Only | Graph Only | No |
@@ -39,5 +39,5 @@ Enterprise DevOps teams currently stitch together 5–8 disconnected point tools
 ## 3. Strategic Takeaways
 
 1. **Unify Pre-Release + Runtime + Governance:** No incumbent bridges pre-merge static/SQL/SBOM/blast-radius risk with live canary statistical verification and post-incident causal replay in one deterministic control plane.
-2. **Predictable Control-Plane Economics:** Unlike APM suites that tax every host and committer seat across three feeder products, ReleaseGuard prices transparently by projects, monthly releases, and governance tier.
-3. **Trustworthy AI Positioning:** Enterprises reject opaque "AI decides whether to deploy" black boxes. ReleaseGuard leads with deterministic, explainable scoring and human-in-the-loop L0–L4 automation.
+2. **Predictable Control-Plane Economics:** Unlike APM suites that tax every host and committer seat across three feeder products, DeploySentinel prices transparently by projects, monthly releases, and governance tier.
+3. **Trustworthy AI Positioning:** Enterprises reject opaque "AI decides whether to deploy" black boxes. DeploySentinel leads with deterministic, explainable scoring and human-in-the-loop L0–L4 automation.

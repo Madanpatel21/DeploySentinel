@@ -1,4 +1,4 @@
-# ReleaseGuard — REST API v1 & OpenAPI Specification
+# DeploySentinel — REST API v1 & OpenAPI Specification
 
 - **Base Path:** `/api/v1`
 - **Interactive Swagger UI:** `/api/v1/docs`

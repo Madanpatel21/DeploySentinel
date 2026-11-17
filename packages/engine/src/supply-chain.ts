@@ -87,7 +87,7 @@ export function analyzeSupplyChain(
   format: 'cyclonedx' | 'spdx' = 'cyclonedx',
   slsaLevel = 2,
   signatureVerified = true,
-  projectName = 'releaseguard-target',
+  projectName = 'deploysentinel-target',
   releaseVersion = '1.0.0'
 ): SbomResult {
   const vulnerabilities: VulnerabilityFinding[] = [];
@@ -145,7 +145,7 @@ export function analyzeSupplyChain(
           dataLicense: 'CC0-1.0',
           SPDXID: 'SPDXRef-DOCUMENT',
           name: `${projectName}-${releaseVersion}`,
-          creationInfo: { created: timestamp, creators: ['Tool: ReleaseGuard-SBOM-1.0'] },
+          creationInfo: { created: timestamp, creators: ['Tool: DeploySentinel-SBOM-1.0'] },
           packages: deps.map((d, idx) => ({
             name: d.name,
             SPDXID: `SPDXRef-Package-${idx}`,

@@ -1,6 +1,6 @@
 import type { FastifyInstance } from 'fastify';
 import { z } from 'zod';
-import { IngestReleaseSchema, PLAN_ENTITLEMENTS, type IngestReleaseInput } from '@releaseguard/shared';
+import { IngestReleaseSchema, PLAN_ENTITLEMENTS, type IngestReleaseInput } from '@deploysentinel/shared';
 import {
   analyzeSqlMigration,
   analyzeSupplyChain,
@@ -15,7 +15,7 @@ import {
   simulateBlastRadius,
   verifySeparationOfDuties,
   type PolicyDefinition,
-} from '@releaseguard/engine';
+} from '@deploysentinel/engine';
 import { authenticateRequest, requirePermission, verifyWebhookHmac } from '../auth/security.js';
 import { config } from '../config.js';
 import { recordAuditLog, supabase } from '../db/supabase.js';
@@ -493,7 +493,7 @@ export async function releaseRoutes(app: FastifyInstance) {
       body.organizationId,
       org.plan,
       null,
-      'ci-webhook@releaseguard.io',
+      'ci-webhook@deploysentinel.io',
       'WEBHOOK',
       body.release,
       req.ip

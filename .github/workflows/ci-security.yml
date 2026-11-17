@@ -1,4 +1,4 @@
-name: ReleaseGuard CI & Supply-Chain Security
+name: DeploySentinel CI & Supply-Chain Security
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm run build
-      - run: npm run test --workspace=@releaseguard/engine
+      - run: npm run test --workspace=@deploysentinel/engine
 
   security-and-sbom:
     runs-on: ubuntu-latest

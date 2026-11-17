@@ -24,7 +24,7 @@ import {
   verifyReadinessPassport,
 } from '../index.js';
 
-describe('ReleaseGuard Deterministic Engines', () => {
+describe('DeploySentinel Deterministic Engines', () => {
   it('computes reproducible, explainable risk score across 8 dimensions', () => {
     const res = computeDeterministicRiskScore({
       changedFiles: [

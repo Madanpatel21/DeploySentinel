@@ -116,7 +116,7 @@ export function AppShell({ title, subtitle, children }: { title: string; subtitl
       <div className="flex min-h-screen items-center justify-center bg-[#090d16] text-slate-300">
         <div className="flex items-center gap-3 text-sm">
           <Shield className="h-5 w-5 animate-pulse text-blue-500" />
-          <span>Verifying ReleaseGuard control plane session...</span>
+          <span>Verifying DeploySentinel control plane session...</span>
         </div>
       </div>
     );
@@ -135,7 +135,7 @@ export function AppShell({ title, subtitle, children }: { title: string; subtitl
               <Shield className="h-5 w-5" />
             </div>
             <div>
-              <div className="text-sm font-bold tracking-tight text-white">ReleaseGuard</div>
+              <div className="text-sm font-bold tracking-tight text-white">DeploySentinel</div>
               <div className="text-[10px] font-medium text-slate-400">{user.organizationName}</div>
             </div>
           </Link>

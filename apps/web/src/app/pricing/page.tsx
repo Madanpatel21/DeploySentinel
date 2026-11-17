@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Check, Shield, ArrowLeft } from 'lucide-react';
-import { PLAN_ENTITLEMENTS } from '@releaseguard/shared';
+import { PLAN_ENTITLEMENTS } from '@deploysentinel/shared';
 
 export default function PricingPage() {
   const plans = Object.values(PLAN_ENTITLEMENTS);

@@ -1,4 +1,4 @@
-# ReleaseGuard — Product Requirements Document (PRD)
+# DeploySentinel — Product Requirements Document (PRD)
 
 **Tagline:** *Know the risk before you release. Understand every change. Protect every deployment.*  
 **Version:** 1.0.0  
@@ -11,7 +11,7 @@
 
 Modern software organizations deploy dozens to thousands of times per day across distributed microservices, Kubernetes clusters, serverless platforms, and relational databases. Yet release decisions remain fragmented across disconnected CI logs, GitHub pull requests, Terraform plans, SQL migration scripts, SBOM scanners, APM dashboards, and Slack war rooms.
 
-**ReleaseGuard** is an enterprise-grade, AI-assisted **DevOps Intelligence, Release Engineering, Deployment Risk Management, and Site Reliability Control Plane**. It unifies pre-release risk scoring, change blast-radius simulation, database migration safety analysis, supply-chain security verification, policy-as-code governance, progressive delivery protection, post-deployment health telemetry, autonomous incident investigation, and compliance evidence generation into one deterministic, auditable SaaS platform.
+**DeploySentinel** is an enterprise-grade, AI-assisted **DevOps Intelligence, Release Engineering, Deployment Risk Management, and Site Reliability Control Plane**. It unifies pre-release risk scoring, change blast-radius simulation, database migration safety analysis, supply-chain security verification, policy-as-code governance, progressive delivery protection, post-deployment health telemetry, autonomous incident investigation, and compliance evidence generation into one deterministic, auditable SaaS platform.
 
 ### Core Design Principles
 1. **Deterministic First, AI-Assisted Second:** All release gates, risk scores, SQL safety checks, SBOM CVE evaluations, and compliance assertions execute in deterministic, versioned, reproducible TypeScript engines. AI adapters provide human-readable explanations, remediation hypotheses, and postmortem synthesis without ever holding sole authority over security or production releases.
@@ -23,7 +23,7 @@ Modern software organizations deploy dozens to thousands of times per day across
 
 ## 2. Target Personas & 9-Role RBAC Matrix
 
-| Role | Primary Responsibilities | Key ReleaseGuard Capabilities |
+| Role | Primary Responsibilities | Key DeploySentinel Capabilities |
 | :--- | :--- | :--- |
 | `ORG_OWNER` | Billing, org lifecycle, SSO/SCIM, org deletion | Full administrative & commercial control |
 | `PLATFORM_ADMIN` | Integrations, cluster targets, RBAC, OPA policies | Connector setup, policy authoring, env configuration |

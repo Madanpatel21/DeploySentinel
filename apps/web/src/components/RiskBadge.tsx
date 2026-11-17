@@ -37,7 +37,7 @@ export function StatusBadge({ status }: { status: string }) {
   return <span className={`rg-badge ${styles[status] ?? 'bg-slate-800 text-slate-300'}`}>{status}</span>;
 }
 
-export function LoadingState({ message = 'Loading ReleaseGuard telemetry...' }: { message?: string }) {
+export function LoadingState({ message = 'Loading DeploySentinel telemetry...' }: { message?: string }) {
   return (
     <div className="rg-card flex items-center justify-center py-12 text-sm text-slate-400">
       <Loader2 className="mr-2 h-4 w-4 animate-spin text-blue-400" />

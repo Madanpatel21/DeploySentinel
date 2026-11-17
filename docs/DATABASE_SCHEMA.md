@@ -1,6 +1,6 @@
-# ReleaseGuard — Database Schema & Row-Level Security
+# DeploySentinel — Database Schema & Row-Level Security
 
-ReleaseGuard uses a dedicated PostgreSQL 17 schema **`releaseguard`** on Supabase (`frxweuvcxauwntotmctw`), completely isolated from `public` tables, with Row-Level Security (RLS) enabled on all 26 tenant-owned tables plus `organizations`.
+DeploySentinel uses a dedicated PostgreSQL 17 schema **`releaseguard`** on Supabase (`frxweuvcxauwntotmctw`), completely isolated from `public` tables, with Row-Level Security (RLS) enabled on all 26 tenant-owned tables plus `organizations`.
 
 ```mermaid
 erDiagram

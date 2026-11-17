@@ -1,7 +1,7 @@
 # Compliance Center & Ethical DORA Metrics
 
 ## Supported Compliance Frameworks
-ReleaseGuard maps live approvals, RBAC memberships, SQL migration reviews, SBOM artifacts, and hash-chained audit logs to:
+DeploySentinel maps live approvals, RBAC memberships, SQL migration reviews, SBOM artifacts, and hash-chained audit logs to:
 - **SOC 2 Type II** (`CC6.1`, `CC8.1`)
 - **ISO 27001** (`A.8.32`)
 - **NIST CSF 2.0** (`PR.DS-6`)

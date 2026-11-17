@@ -3,10 +3,10 @@ WORKDIR /app
 COPY package.json package-lock.json* tsconfig.base.json ./
 COPY packages/shared/package.json packages/shared/
 COPY apps/web/package.json apps/web/
-RUN npm ci --workspace=@releaseguard/shared --workspace=@releaseguard/web --include-workspace-root
+RUN npm ci --workspace=@deploysentinel/shared --workspace=@deploysentinel/web --include-workspace-root
 COPY packages/shared/ packages/shared/
 COPY apps/web/ apps/web/
-RUN npm run build --workspace=@releaseguard/shared && npm run build --workspace=@releaseguard/web
+RUN npm run build --workspace=@deploysentinel/shared && npm run build --workspace=@deploysentinel/web
 
 FROM node:20-alpine AS runner
 RUN addgroup -g 1001 -S nodejs && adduser -S nextjs -u 1001
@@ -18,4 +18,4 @@ COPY --from=builder /app/apps/web/package.json ./apps/web/
 COPY --from=builder /app/apps/web/next.config.mjs ./apps/web/
 USER nextjs
 EXPOSE 3000
-CMD ["npm", "run", "start", "--workspace=@releaseguard/web"]
+CMD ["npm", "run", "start", "--workspace=@deploysentinel/web"]

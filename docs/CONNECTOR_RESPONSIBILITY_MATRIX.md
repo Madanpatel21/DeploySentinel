@@ -1,6 +1,6 @@
 # Connector Responsibility Matrix
 
-| Connector / Service | Arena Connector Status | Role in ReleaseGuard | Fallback / Adapter Strategy |
+| Connector / Service | Arena Connector Status | Role in DeploySentinel | Fallback / Adapter Strategy |
 | :--- | :--- | :--- | :--- |
 | **Supabase** (`frxweuvcxauwntotmctw`) | Enabled & Healthy | Primary PostgreSQL 17.11 database (`releaseguard` schema + RLS) | Supabase REST + RPC + dedicated schema isolation |
 | **Linear** (`MRP` team) | Enabled & Healthy | Project/Milestone/Issue tracking + Incident-to-Linear ticket adapter | Built-in Linear GraphQL client + Arena connector sync |

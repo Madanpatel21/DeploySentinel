@@ -1,4 +1,4 @@
-# ReleaseGuard — 20-Phase Implementation Roadmap
+# DeploySentinel — 20-Phase Implementation Roadmap
 
 | Phase | Scope | Key Deliverables | Target Milestone |
 | :--- | :--- | :--- | :--- |

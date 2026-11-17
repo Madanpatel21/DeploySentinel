@@ -1,5 +1,5 @@
 {
-  "name": "@releaseguard/api",
+  "name": "@deploysentinel/api",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/server.js",
@@ -17,8 +17,8 @@
     "@fastify/rate-limit": "^10.2.0",
     "@fastify/swagger": "^9.4.0",
     "@fastify/swagger-ui": "^5.2.0",
-    "@releaseguard/engine": "1.0.0",
-    "@releaseguard/shared": "1.0.0",
+    "@deploysentinel/engine": "1.0.0",
+    "@deploysentinel/shared": "1.0.0",
     "@supabase/supabase-js": "^2.46.1",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.7",

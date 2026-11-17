@@ -1,4 +1,4 @@
-# ReleaseGuard — Market Positioning & Go-To-Market Blueprint
+# DeploySentinel — Market Positioning & Go-To-Market Blueprint
 
 **Tagline:** *Know the risk before you release. Understand every change. Protect every deployment.*
 
@@ -6,7 +6,7 @@
 
 ## 1. Category Definition
 
-**ReleaseGuard** defines the **Release Intelligence & Deployment Risk Control Plane** category. Rather than replacing GitHub Actions, Argo CD, Terraform, or Prometheus/OpenTelemetry, ReleaseGuard sits directly above CI/CD, IaC, supply-chain scanners, and observability backends as the deterministic decision, simulation, and governance layer.
+**DeploySentinel** defines the **Release Intelligence & Deployment Risk Control Plane** category. Rather than replacing GitHub Actions, Argo CD, Terraform, or Prometheus/OpenTelemetry, DeploySentinel sits directly above CI/CD, IaC, supply-chain scanners, and observability backends as the deterministic decision, simulation, and governance layer.
 
 ## 2. Value Proposition by Buyer
 

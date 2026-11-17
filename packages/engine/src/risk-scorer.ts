@@ -1,4 +1,4 @@
-import type { ChangedFileInput, RiskFactor, RiskLevel, RiskScoreResult } from '@releaseguard/shared';
+import type { ChangedFileInput, RiskFactor, RiskLevel, RiskScoreResult } from '@deploysentinel/shared';
 
 export const SCORING_VERSION = 'v2.1.0';
 

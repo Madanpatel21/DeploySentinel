@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: releaseguard-api
+  name: deploysentinel-api
   labels:
-    app: releaseguard-api
+    app: deploysentinel-api
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: releaseguard-api
+      app: deploysentinel-api
   template:
     metadata:
       labels:
-        app: releaseguard-api
+        app: deploysentinel-api
     spec:
       securityContext:
         runAsNonRoot: true
         runAsUser: 1001
       containers:
         - name: api
-          image: ghcr.io/releaseguard/api:1.0.0
+          image: ghcr.io/deploysentinel/api:1.0.0
           ports:
             - containerPort: 4000
           securityContext:
@@ -48,10 +48,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: releaseguard-api
+  name: deploysentinel-api
 spec:
   selector:
-    app: releaseguard-api
+    app: deploysentinel-api
   ports:
     - port: 80
       targetPort: 4000

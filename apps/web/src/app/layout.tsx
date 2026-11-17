@@ -3,7 +3,7 @@ import './globals.css';
 import { Providers } from '@/components/Providers';
 
 export const metadata: Metadata = {
-  title: 'ReleaseGuard — Enterprise Release Intelligence & Deployment Risk Control Plane',
+  title: 'DeploySentinel — Enterprise Release Intelligence & Deployment Risk Control Plane',
   description: 'Know the risk before you release. Understand every change. Protect every deployment.',
 };
 

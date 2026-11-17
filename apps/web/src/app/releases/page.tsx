@@ -105,7 +105,7 @@ export default function ReleasesPage() {
             {ingestMut.error && <div className="text-xs text-rose-400">{(ingestMut.error as Error).message}</div>}
             <div className="flex gap-2">
               <button type="submit" disabled={ingestMut.isPending} className="rg-btn-primary">
-                {ingestMut.isPending ? 'Evaluating Engines...' : 'Run ReleaseGuard Analysis'}
+                {ingestMut.isPending ? 'Evaluating Engines...' : 'Run DeploySentinel Analysis'}
               </button>
               <button type="button" onClick={() => setShowIngest(false)} className="rg-btn-secondary">Cancel</button>
             </div>

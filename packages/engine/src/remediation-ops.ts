@@ -30,7 +30,7 @@ export function validateRemediationAction(
       `2. Execute ${actionType} under ${autonomyLevel} guardrails.`,
       `3. Monitor error rate and p95 latency for 5 minutes post-action.`,
     ],
-    rollbackPlan: `Revert ${actionType} to pre-action snapshot via ReleaseGuard Control Center.`,
+    rollbackPlan: `Revert ${actionType} to pre-action snapshot via DeploySentinel Control Center.`,
   };
 }
 

@@ -1,19 +1,19 @@
 {
-  "name": "releaseguard",
+  "name": "deploysentinel",
   "version": "1.0.0",
   "private": true,
-  "description": "ReleaseGuard — Enterprise DevOps Intelligence, Release Risk Management & SRE Control Plane",
+  "description": "DeploySentinel — Enterprise DevOps Intelligence, Release Risk Management & SRE Control Plane",
   "workspaces": [
     "packages/*",
     "apps/*"
   ],
   "scripts": {
-    "dev:api": "npm run dev --workspace=@releaseguard/api",
-    "dev:web": "npm run dev --workspace=@releaseguard/web",
-    "build": "npm run build --workspace=@releaseguard/shared && npm run build --workspace=@releaseguard/engine && npm run build --workspace=@releaseguard/api && npm run build --workspace=@releaseguard/web",
-    "typecheck": "npm run typecheck --workspace=@releaseguard/shared && npm run typecheck --workspace=@releaseguard/engine && npm run typecheck --workspace=@releaseguard/api && npm run typecheck --workspace=@releaseguard/web",
-    "test": "npm run test --workspace=@releaseguard/engine && npm run test --workspace=@releaseguard/api",
-    "seed": "npm run seed --workspace=@releaseguard/api"
+    "dev:api": "npm run dev --workspace=@deploysentinel/api",
+    "dev:web": "npm run dev --workspace=@deploysentinel/web",
+    "build": "npm run build --workspace=@deploysentinel/shared && npm run build --workspace=@deploysentinel/engine && npm run build --workspace=@deploysentinel/api && npm run build --workspace=@deploysentinel/web",
+    "typecheck": "npm run typecheck --workspace=@deploysentinel/shared && npm run typecheck --workspace=@deploysentinel/engine && npm run typecheck --workspace=@deploysentinel/api && npm run typecheck --workspace=@deploysentinel/web",
+    "test": "npm run test --workspace=@deploysentinel/engine && npm run test --workspace=@deploysentinel/api",
+    "seed": "npm run seed --workspace=@deploysentinel/api"
   },
   "engines": {
     "node": ">=20.0.0"

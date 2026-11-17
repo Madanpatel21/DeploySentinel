@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs';
 import { SignJWT, jwtVerify } from 'jose';
 import * as OTPAuth from 'otpauth';
 import type { FastifyReply, FastifyRequest } from 'fastify';
-import { hasPermission, type Permission, type RbacRole } from '@releaseguard/shared';
+import { hasPermission, type Permission, type RbacRole } from '@deploysentinel/shared';
 import { config } from '../config.js';
 import { supabase } from '../db/supabase.js';
 
@@ -81,7 +81,7 @@ export function decryptSecret(ciphertext: string): string {
 
 export function generateTotpSetup(email: string) {
   const totp = new OTPAuth.TOTP({
-    issuer: 'ReleaseGuard',
+    issuer: 'DeploySentinel',
     label: email,
     algorithm: 'SHA1',
     digits: 6,
@@ -92,7 +92,7 @@ export function generateTotpSetup(email: string) {
 
 export function verifyTotpToken(secretBase32: string, token: string): boolean {
   const totp = new OTPAuth.TOTP({
-    issuer: 'ReleaseGuard',
+    issuer: 'DeploySentinel',
     algorithm: 'SHA1',
     digits: 6,
     period: 30,

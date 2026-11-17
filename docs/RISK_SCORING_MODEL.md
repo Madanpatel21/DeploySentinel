@@ -1,6 +1,6 @@
 # Deterministic Release Risk Scoring Model (`v2.1.0`)
 
-ReleaseGuard computes an explainable, reproducible risk score `0–100` across **8 deterministic weighted dimensions**, adjusted by environment tier (`prod: 1.12x`, `staging: 1.0x`, `dev: 0.85x`) and service tier (`TIER_0: 1.10x`, `TIER_1: 1.0x`, `TIER_2/3: 0.90x`).
+DeploySentinel computes an explainable, reproducible risk score `0–100` across **8 deterministic weighted dimensions**, adjusted by environment tier (`prod: 1.12x`, `staging: 1.0x`, `dev: 0.85x`) and service tier (`TIER_0: 1.10x`, `TIER_1: 1.0x`, `TIER_2/3: 0.90x`).
 
 | Dimension | Weight | Signal Source |
 | :--- | :---: | :--- |

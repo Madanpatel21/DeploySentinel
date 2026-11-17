@@ -1,4 +1,4 @@
-import type { ChangedFileInput, ServiceNode } from '@releaseguard/shared';
+import type { ChangedFileInput, ServiceNode } from '@deploysentinel/shared';
 
 export interface BlastRadiusResult {
   directlyImpactedServices: string[];

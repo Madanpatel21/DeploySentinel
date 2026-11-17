@@ -1,4 +1,4 @@
-# ReleaseGuard — Security Requirements & Threat Model
+# DeploySentinel — Security Requirements & Threat Model
 
 **Version:** 1.0.0  
 **Last Updated:** 2026-11-16  
@@ -19,7 +19,7 @@
 
 ## 2. Threat Model (STRIDE Matrix)
 
-| Threat | Attack Vector | Mitigation in ReleaseGuard |
+| Threat | Attack Vector | Mitigation in DeploySentinel |
 | :--- | :--- | :--- |
 | **Spoofing** | Forged CI/GitHub webhooks or stolen JWT | HMAC-SHA256 webhook signature (`timingSafeEqual`) + replay timestamp window; short-lived JWT + revocable refresh sessions + TOTP MFA + bcrypt (`>=12` rounds) |
 | **Tampering** | Altering risk scores, approvals, or audit logs | Deterministic server-side re-scoring; hash-chained `audit_logs` (`prev_hash` + `entry_hash`); cryptographic Readiness Passport HMAC signature |

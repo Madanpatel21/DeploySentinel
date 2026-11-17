@@ -1,4 +1,4 @@
-# ReleaseGuard — Production Readiness & Acceptance Report
+# DeploySentinel — Production Readiness & Acceptance Report
 
 **Date:** 2026-11-16  
 **Verdict:** **READY FOR STAGING / CONTROLLED PRODUCTION ROLLOUT (Evidence-Backed)**
@@ -9,10 +9,10 @@
 
 | Check | Scope | Result | Notes |
 | :--- | :--- | :--- | :--- |
-| `npm run typecheck` | `@releaseguard/shared`, `engine`, `api`, `web` | **PASSED (0 errors)** | Strict TypeScript across all 4 workspaces |
+| `npm run typecheck` | `@deploysentinel/shared`, `engine`, `api`, `web` | **PASSED (0 errors)** | Strict TypeScript across all 4 workspaces |
 | `npm run build` | All packages + Next.js 15.5.29 (`32/32` routes) | **PASSED** | Patched Next.js `15.5.29` (eliminating CVE-2025-66478) |
-| `npm run test --workspace=@releaseguard/engine` | 10 deterministic engine test suites | **10/10 PASSED (26ms)** | Risk, Blast Radius, ITS, SQL, SBOM, Policy Sim, Canary, Replay, Drift/FinOps/DORA, Prompt-Injection & Passport |
-| `npm run test --workspace=@releaseguard/api` | 6 live integration & security suites against Supabase PG17 | **6/6 PASSED** | Multi-tenant isolation, RBAC, SoD, Idempotency, Local Git CLI, Webhook HMAC, Hash-Chained Audit Log |
+| `npm run test --workspace=@deploysentinel/engine` | 10 deterministic engine test suites | **10/10 PASSED (26ms)** | Risk, Blast Radius, ITS, SQL, SBOM, Policy Sim, Canary, Replay, Drift/FinOps/DORA, Prompt-Injection & Passport |
+| `npm run test --workspace=@deploysentinel/api` | 6 live integration & security suites against Supabase PG17 | **6/6 PASSED** | Multi-tenant isolation, RBAC, SoD, Idempotency, Local Git CLI, Webhook HMAC, Hash-Chained Audit Log |
 | Live Runtime Smoke Check | API (`0.0.0.0:4000`) + Web (`0.0.0.0:3000`) | **ALL 30 SCREENS HTTP 200** | Verified proxied `/readyz`, `/api/v1/auth/login`, `/api/v1/releases`, and dynamic `/releases/[id]` |
 
 ## 2. Security & Safety Controls Verified

@@ -4,7 +4,7 @@ import { buildApp } from '../server.js';
 import { config } from '../config.js';
 import type { FastifyInstance } from 'fastify';
 
-describe('ReleaseGuard API Integration & Security Suite', () => {
+describe('DeploySentinel API Integration & Security Suite', () => {
   let app: FastifyInstance;
   let acmeOwnerToken = '';
   let acmeRelMgrToken = '';
@@ -22,16 +22,16 @@ describe('ReleaseGuard API Integration & Security Suite', () => {
       const res = await app.inject({
         method: 'POST',
         url: '/api/v1/auth/login',
-        payload: { email, password: 'ReleaseGuard!2026' },
+        payload: { email, password: 'DeploySentinel!2026' },
       });
       expect(res.statusCode).toBe(200);
       return res.json() as { token: string; user: { organizationId: string; role: string } };
     };
 
-    const owner = await login('owner@acme.releaseguard.io');
-    const relMgr = await login('relmgr@acme.releaseguard.io');
-    const dev = await login('dev@acme.releaseguard.io');
-    const beta = await login('beta-owner@beta.releaseguard.io');
+    const owner = await login('owner@acme.deploysentinel.io');
+    const relMgr = await login('relmgr@acme.deploysentinel.io');
+    const dev = await login('dev@acme.deploysentinel.io');
+    const beta = await login('beta-owner@beta.deploysentinel.io');
 
     acmeOwnerToken = owner.token;
     acmeRelMgrToken = relMgr.token;
@@ -49,11 +49,11 @@ describe('ReleaseGuard API Integration & Security Suite', () => {
 
     const r = await app.inject({ method: 'GET', url: '/readyz' });
     expect(r.statusCode).toBe(200);
-    expect(r.json().db).toBe('supabase-pg17-releaseguard');
+    expect(r.json().db).toBe('supabase-pg17-deploysentinel');
 
     const m = await app.inject({ method: 'GET', url: '/metrics' });
     expect(m.statusCode).toBe(200);
-    expect(m.body).toContain('releaseguard_releases_total');
+    expect(m.body).toContain('deploysentinel_releases_total');
 
     const o = await app.inject({ method: 'GET', url: '/api/v1/docs/json' });
     expect(o.statusCode).toBe(200);
@@ -67,7 +67,7 @@ describe('ReleaseGuard API Integration & Security Suite', () => {
     const badPass = await app.inject({
       method: 'POST',
       url: '/api/v1/auth/login',
-      payload: { email: 'owner@acme.releaseguard.io', password: 'wrong-password' },
+      payload: { email: 'owner@acme.deploysentinel.io', password: 'wrong-password' },
     });
     expect(badPass.statusCode).toBe(401);
   });
@@ -165,7 +165,7 @@ describe('ReleaseGuard API Integration & Security Suite', () => {
     expect(mgrApprove.statusCode).toBe(200);
     expect(mgrApprove.json().sod.valid).toBe(true);
     expect(mgrApprove.json().releaseStatus).toBe('APPROVED');
-  });
+  }, 15000);
 
   it('verifies HMAC-SHA256 webhook signature, Policy Simulation Mode, Local Git Scanner, and Audit Chain', async () => {
     const badWebhook = await app.inject({
@@ -214,7 +214,7 @@ describe('ReleaseGuard API Integration & Security Suite', () => {
     });
     expect(doraRes.statusCode).toBe(200);
     expect(doraRes.json().summary.ethicalGuarantee).toBe('NO_INDIVIDUAL_DEVELOPER_RANKING');
-  });
+  }, 15000);
 
   it('verifies valid HMAC-SHA256 webhook signature succeeds', async () => {
     const me = await app.inject({

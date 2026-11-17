@@ -36,7 +36,7 @@ export async function buildApp() {
   await app.register(swagger, {
     openapi: {
       info: {
-        title: 'ReleaseGuard Control Plane API',
+        title: 'DeploySentinel Control Plane API',
         description: 'Enterprise DevOps Intelligence, Release Risk Management & SRE Control Plane REST API v1',
         version: '1.0.0',
       },
@@ -68,14 +68,14 @@ export async function buildApp() {
     });
   });
 
-  app.get('/healthz', async () => ({ status: 'ok', service: 'releaseguard-api', timestamp: new Date().toISOString() }));
+  app.get('/healthz', async () => ({ status: 'ok', service: 'deploysentinel-api', timestamp: new Date().toISOString() }));
 
   app.get('/readyz', async (_req, reply) => {
     const { error } = await supabase.from('organizations').select('id').limit(1);
     if (error) {
       return reply.code(503).send({ status: 'degraded', db: 'unreachable', error: error.message });
     }
-    return { status: 'ready', db: 'supabase-pg17-releaseguard', timestamp: new Date().toISOString() };
+    return { status: 'ready', db: 'supabase-pg17-deploysentinel', timestamp: new Date().toISOString() };
   });
 
   app.get('/metrics', async (_req, reply) => {
@@ -85,13 +85,13 @@ export async function buildApp() {
     ]);
     reply.header('Content-Type', 'text/plain; version=0.0.4');
     return [
-      '# HELP releaseguard_releases_total Total releases analyzed across tenants',
-      '# TYPE releaseguard_releases_total gauge',
-      `releaseguard_releases_total ${relCount ?? 0}`,
-      '# HELP releaseguard_open_incidents_total Active unresolved incidents',
-      '# TYPE releaseguard_open_incidents_total gauge',
-      `releaseguard_open_incidents_total ${incCount ?? 0}`,
-      `releaseguard_up 1`,
+      '# HELP deploysentinel_releases_total Total releases analyzed across tenants',
+      '# TYPE deploysentinel_releases_total gauge',
+      `deploysentinel_releases_total ${relCount ?? 0}`,
+      '# HELP deploysentinel_open_incidents_total Active unresolved incidents',
+      '# TYPE deploysentinel_open_incidents_total gauge',
+      `deploysentinel_open_incidents_total ${incCount ?? 0}`,
+      `deploysentinel_up 1`,
     ].join('\n');
   });
 

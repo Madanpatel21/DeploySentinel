@@ -8,19 +8,19 @@ import { apiFetch } from '@/lib/api';
 import { useAuth, type SessionUser } from '@/components/Providers';
 
 const DEMO_PERSONAS = [
-  { label: 'Org Owner (Acme)', email: 'owner@acme.releaseguard.io', role: 'ORG_OWNER' },
-  { label: 'Release Manager', email: 'relmgr@acme.releaseguard.io', role: 'RELEASE_MANAGER' },
-  { label: 'SRE On-Call', email: 'sre@acme.releaseguard.io', role: 'SRE_ONCALL' },
-  { label: 'Security Admin', email: 'sec@acme.releaseguard.io', role: 'SECURITY_ADMIN' },
-  { label: 'Developer', email: 'dev@acme.releaseguard.io', role: 'DEVELOPER' },
-  { label: 'Auditor', email: 'auditor@acme.releaseguard.io', role: 'AUDITOR' },
+  { label: 'Org Owner (Acme)', email: 'owner@acme.deploysentinel.io', role: 'ORG_OWNER' },
+  { label: 'Release Manager', email: 'relmgr@acme.deploysentinel.io', role: 'RELEASE_MANAGER' },
+  { label: 'SRE On-Call', email: 'sre@acme.deploysentinel.io', role: 'SRE_ONCALL' },
+  { label: 'Security Admin', email: 'sec@acme.deploysentinel.io', role: 'SECURITY_ADMIN' },
+  { label: 'Developer', email: 'dev@acme.deploysentinel.io', role: 'DEVELOPER' },
+  { label: 'Auditor', email: 'auditor@acme.deploysentinel.io', role: 'AUDITOR' },
 ];
 
 export default function LoginPage() {
   const router = useRouter();
   const { setSession } = useAuth();
-  const [email, setEmail] = useState('owner@acme.releaseguard.io');
-  const [password, setPassword] = useState('ReleaseGuard!2026');
+  const [email, setEmail] = useState('owner@acme.deploysentinel.io');
+  const [password, setPassword] = useState('DeploySentinel!2026');
   const [totpCode, setTotpCode] = useState('');
   const [mfaRequired, setMfaRequired] = useState(false);
   const [error, setError] = useState('');
@@ -53,7 +53,7 @@ export default function LoginPage() {
           <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600/20 text-blue-400 ring-1 ring-blue-500/40">
             <Shield className="h-6 w-6" />
           </div>
-          <h1 className="text-2xl font-bold text-white">Sign in to ReleaseGuard</h1>
+          <h1 className="text-2xl font-bold text-white">Sign in to DeploySentinel</h1>
           <p className="mt-1 text-xs text-slate-400">Real JWT + bcrypt + TOTP MFA authentication against Supabase PG17</p>
         </div>
 
@@ -91,7 +91,7 @@ export default function LoginPage() {
                 type="button"
                 onClick={() => {
                   setEmail(p.email);
-                  setPassword('ReleaseGuard!2026');
+                  setPassword('DeploySentinel!2026');
                 }}
                 className="rounded-lg border border-slate-800 bg-slate-950 px-2.5 py-1.5 text-left text-[11px] hover:border-blue-500/50"
               >
